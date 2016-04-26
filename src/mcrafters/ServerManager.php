@@ -31,3 +31,4 @@ class ServerManager extends PluginBase implements Listener
 	{
 		$this->getLogger()->info(MT::GRAY . "[" . MT::BOLD . MT::GREEN . "Server - " . MT::YELLOW . "Manager" . MT::GRAY . "] " . MT::RED . " has disabled");
 	}
+}
