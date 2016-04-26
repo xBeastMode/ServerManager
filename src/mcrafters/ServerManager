@@ -20,6 +20,7 @@ class ServerManager extends PluginBase implements Listener
 	{
 	        $this->getServer()->getPluginManager()->registerEvents($this, $this);
 	        $this->getServer()->getLogger()->info(MT::GRAY . "[" . MT::BOLD . MT::GREEN . "Server - " . MT::YELLOW . "Manager" . MT::GRAY . "] " . MT::GREEN . " has enabled");
+	        $this->getServer()->getLogger()->info(MT::GRAY . "[" . MT::BOLD . MT::GREEN . "Server - " . MT::YELLOW . "Manager" . MT::GRAY . "] " . MT::DARK_PURPLE . " The Plugin Is Still In Development So for now it is not working check back later");
 			@mkdir($this->getDataFolder());
 	        $this->saveResource("config.yml");
 	        $this->cfg = new Config ($this->getDataFolder() . "config.yml", Config::YAML);
