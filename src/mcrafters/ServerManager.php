@@ -13,7 +13,6 @@ use pocketmine\command\CommandExecutor;
 use pocketmine\Server;
 use pocketmine\IPlayer;
 use pocketmine\Player;
-use pocketmine\plugin\FolderPluginLoader;
 
 class ServerManager extends PluginBase implements Listener
 {
