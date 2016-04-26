@@ -1,4 +1,4 @@
-name: Op-Manager
+name: ServerManager
 main: mcrafters\ServerManager
 version: 1.0.0 Development
 api: [1.0.0, 2.0.0]
