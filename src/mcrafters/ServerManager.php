@@ -1,3 +1,5 @@
+<?php
+
 namespace mcrafters;
 
 use pocketmine\utils\Config;
