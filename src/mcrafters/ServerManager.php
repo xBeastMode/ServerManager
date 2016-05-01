@@ -5,7 +5,7 @@ namespace mcrafters;
 use pocketmine\utils\Config;
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
-use pocketmine\utils\TextFormat as MT;
+use pocketmine\utils\TextFormat as CM;
 use pocketmine\command\PluginCommand;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
@@ -13,13 +13,16 @@ use pocketmine\command\CommandExecutor;
 use pocketmine\Server;
 use pocketmine\IPlayer;
 use pocketmine\Player;
-use pocketmine\event\BlockBreakEvent;
-use pocketmine\event\BlockBreakEvent;
-use pocketmine\event\PlayerChatEvent;
-use pocketmine\event\PlayerDropItemEvent;
-use pocketmine\event\PlayerGameModeChangeEvent;
-use pocketmine\event\
-use pocketmine\event\
+use pocketmine\event\block\BlockBreakEvent;
+use pocketmine\event\block\BlockPlaceEvent;
+use pocketmine\event\player\PlayerChatEvent;
+use pocketmine\event\player\PlayerDropItemEvent;
+use pocketmine\event\player\PlayerGameModeChangeEvent;
+use pocketmine\event\player\PlayerCommandPreprocessEvent;
+use pocketmine\event\player\PlayerDeathEvent;
+use pocketmine\event\player\PlayerDropItemEvent;
+use pocketmine\event\player\PlayerGameModeChangeEvent;
+use pocketmine\event\player\PlayerToggleSneakEvent;
 
 class ServerManager extends PluginBase implements Listener
 {
