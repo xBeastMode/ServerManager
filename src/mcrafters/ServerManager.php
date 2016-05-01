@@ -13,11 +13,11 @@ use pocketmine\command\CommandExecutor;
 use pocketmine\Server;
 use pocketmine\IPlayer;
 use pocketmine\Player;
-use pocketmine\event\
-use pocketmine\event\
-use pocketmine\event\
-use pocketmine\event\
-use pocketmine\event\
+use pocketmine\event\BlockBreakEvent;
+use pocketmine\event\BlockBreakEvent;
+use pocketmine\event\PlayerChatEvent;
+use pocketmine\event\PlayerDropItemEvent;
+use pocketmine\event\PlayerGameModeChangeEvent;
 use pocketmine\event\
 use pocketmine\event\
 
