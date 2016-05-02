@@ -5,7 +5,7 @@ namespace mcrafters;
 use pocketmine\utils\Config;
 use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
-use pocketmine\utils\TextFormat as CM;
+use pocketmine\utils\TextFormat as SM;
 use pocketmine\command\PluginCommand;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
