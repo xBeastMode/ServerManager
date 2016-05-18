@@ -28,8 +28,8 @@ class ServerManager extends PluginBase implements Listener
     public function onEnable()
     {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getServer()->getLogger()->info(SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] " . SM::GREEN . " has enabled");
-        $this->getServer()->getLogger()->info(SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] " . SM::DARK_PURPLE . " The Plugin Is Still In Development So for now it is not working check back later");
+        $this->getServer()->getLogger()->info(SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] " . SM::GREEN . " has successfully enabled");
+        $this->getServer()->getLogger()->info(SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] " . SM::DARK_PURPLE . " This plugin is still in development mode. Most features will not work. Please check back at a later date.");
         @mkdir($this->getDataFolder());
         $this->saveResource("config.yml");
         $this->saveResource("messages.yml");
@@ -40,7 +40,7 @@ class ServerManager extends PluginBase implements Listener
     public function onBreak(BlockBreakEvent $bbe)
     {
         if($this->cfg->get("BlockBreaking") == false or $this->cfg->get("BlockBreaking") == disabled){
-        if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
+        if(!$bbe->getPlayer()->hasPermission('servermanager.bypass') or $bbe->getPlater()->isOp()){
             $bbe->getPlayer()->sendMessage(SM::GRAY . "[" . SM::AQUA . "Server-" . SM::YELLOW . "Manager" . SM::GRAY . "] " . $this->cfgm->get("BlockBreaking"));
         $bbe->setCancelled();
     }
@@ -48,6 +48,8 @@ class ServerManager extends PluginBase implements Listener
 }
     public function onDisable()
 	{
-		$this->getLogger()->info(SM::GRAY . "[" . SM::BOLD . SM::GREEN . "Server - " . SM::YELLOW . "Manager" . SM::GRAY . "] " . SM::RED . " has disabled");
+		$this->saveResource("config.yml");
+        	$this->saveResource("messages.yml");
+		$this->getLogger()->info(SM::GRAY . "[" . SM::BOLD . SM::GREEN . "Server - " . SM::YELLOW . "Manager" . SM::GRAY . "] " . SM::RED . " has successfully disabled");
 	}
 }
