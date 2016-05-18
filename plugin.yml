@@ -6,3 +6,7 @@ api: [1.0.0, 2.0.0]
 load: STARTUP
 author: MCrafters
 description: The Ultimate Server Managment Plugin
+permissions:
+  servermanager.bypass:
+    default: op
+    description: Make ServerManager Uneffective on a player
