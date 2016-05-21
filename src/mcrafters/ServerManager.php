@@ -40,7 +40,7 @@ class ServerManager extends PluginBase implements Listener
     public function onBreak(BlockBreakEvent $bbe)
     {
         if($this->cfg->get("BlockBreaking") == false or $this->cfg->get("BlockBreaking") == disabled){
-        if(!$bbe->getPlayer()->hasPermission('servermanager.bypass') or $bbe->getPlater()->isOp()){
+        if(!$bbe->getPlayer()->hasPermission('servermanager.bypass') or $bbe->getPlayer()->isOp()){
             $bbe->getPlayer()->sendMessage(SM::GRAY . "[" . SM::AQUA . "Server-" . SM::YELLOW . "Manager" . SM::GRAY . "] " . $this->cfgm->get("BlockBreaking"));
         $bbe->setCancelled();
     }
