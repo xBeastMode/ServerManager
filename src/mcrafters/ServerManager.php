@@ -50,12 +50,14 @@ class ServerManager extends PluginBase implements Listener
     public $cfg;
 
     public $cfgm;
+    
+    public $prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] "
 
     public function onEnable()
     {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getServer()->getLogger()->info(SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] " . SM::GREEN . " has enabled");
-        $this->getServer()->getLogger()->info(SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] " . SM::DARK_PURPLE . " The Plugin Is Still In Development So for now it is not working check back later");
+        $this->getServer()->getLogger()->info($prefix . SM::GREEN . " has enabled");
+        $this->getServer()->getLogger()->info($prefix . SM::DARK_PURPLE . " The Plugin Is Still In Development So for now it is not working check back later");
         @mkdir($this->getDataFolder());
         $this->saveResource("config.yml");
         $this->saveResource("messages.yml");
@@ -67,7 +69,7 @@ class ServerManager extends PluginBase implements Listener
     {
         if($this->cfg->get("BlockPlacing") == false or $this->cfg->get("BlockPlacing") == disabled){
         if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
-            $bbe->getPlayer()->sendMessage(SM::GRAY . "[" . SM::AQUA . "Server-" . SM::YELLOW . "Manager" . SM::GRAY . "] " . $this->cfgm->get("BlockPlacing"));
+            $bbe->getPlayer()->sendMessage($prefix . $this->cfgm->get("BlockPlacing"));
         $bbe->setCancelled();
     }
 	}
@@ -76,7 +78,7 @@ class ServerManager extends PluginBase implements Listener
     {
         if($this->cfg->get("BlockBreaking") == false or $this->cfg->get("BlockBreaking") == disabled){
             if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
-                $bbe->getPlayer()->sendMessage(SM::GRAY . "[" . SM::AQUA . "Server-" . SM::YELLOW . "Manager" . SM::GRAY . "] " . $this->cfgm->get("BlockBreaking"));
+                $bbe->getPlayer()->sendMessage($prefix . $this->cfgm->get("BlockBreaking"));
                 $bbe->setCancelled();
             }
         }
@@ -85,7 +87,7 @@ class ServerManager extends PluginBase implements Listener
     {
         if($this->cfg->get("Chating") == false or $this->cfg->get("Chating") == disabled){
             if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
-                $bbe->getPlayer()->sendMessage(SM::GRAY . "[" . SM::AQUA . "Server-" . SM::YELLOW . "Manager" . SM::GRAY . "] " . $this->cfgm->get("Chating"));
+                $bbe->getPlayer()->sendMessage($prefix . $this->cfgm->get("Chating"));
                 $bbe->setCancelled();
             }
         }
@@ -94,7 +96,7 @@ class ServerManager extends PluginBase implements Listener
     {
         if($this->cfg->get("BlockBreaking") == false or $this->cfg->get("BlockBreaking") == disabled){
             if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
-               $bbe->getPlayer()->sendMessage(SM::GRAY . "[" . SM::AQUA . "Server-" . SM::YELLOW . "Manager" . SM::GRAY . "] " . $this->cfgm->get("ItemDrop"));
+               $bbe->getPlayer()->sendMessage($prefix . $this->cfgm->get("ItemDrop"));
                 $bbe->setCancelled();
             }
         }
@@ -103,13 +105,13 @@ class ServerManager extends PluginBase implements Listener
     {
         if($this->cfg->get("Death") == false or $this->cfg->get("Death") == disabled){
             if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
-                $bbe->getPlayer()->sendMessage(SM::GRAY . "[" . SM::AQUA . "Server-" . SM::YELLOW . "Manager" . SM::GRAY . "] " . $this->cfgm->get("Death"));
+                $bbe->getPlayer()->sendMessage($prefix . $this->cfgm->get("Death"));
                 $bbe->setCancelled();
             }
         }
     }
     public function onDisable()
 	{
-		$this->getLogger()->info(SM::GRAY . "[" . SM::BOLD . SM::GREEN . "Server - " . SM::YELLOW . "Manager" . SM::GRAY . "] " . SM::RED . " has disabled");
+		$this->getLogger()->info($prefix . SM::RED . " has disabled");
 	}
 }
