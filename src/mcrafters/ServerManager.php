@@ -56,8 +56,8 @@ class ServerManager extends PluginBase implements Listener
     public function onEnable()
     {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getServer()->getLogger()->info($prefix . SM::GREEN . " has enabled");
-        $this->getServer()->getLogger()->info($prefix . SM::DARK_PURPLE . " The Plugin Is Still In Development So for now it is not working check back later");
+        $this->getServer()->getLogger()->info($prefix . SM::GREEN . " has been enabled");
+        $this->getServer()->getLogger()->info($prefix . SM::DARK_RED . " PLEASE NOTE:" . SM::DARK_PURPLE . " The Plugin Is Still In Development So for now it is not completely working. Please check back later");
         @mkdir($this->getDataFolder());
         $this->saveResource("config.yml");
         $this->saveResource("messages.yml");
@@ -85,9 +85,9 @@ class ServerManager extends PluginBase implements Listener
     }
     public function onChat(PlayerChatEvent $pce)
     {
-        if($this->cfg->get("Chating") == false or $this->cfg->get("Chating") == disabled){
+        if($this->cfg->get("Chatting") == false or $this->cfg->get("Chatting") == disabled){
             if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
-                $bbe->getPlayer()->sendMessage($prefix . $this->cfgm->get("Chating"));
+                $bbe->getPlayer()->sendMessage($prefix . $this->cfgm->get("Chatting"));
                 $bbe->setCancelled();
             }
         }
@@ -112,6 +112,6 @@ class ServerManager extends PluginBase implements Listener
     }
     public function onDisable()
 	{
-		$this->getLogger()->info($prefix . SM::RED . " has disabled");
+		$this->getLogger()->info($prefix . SM::RED . " has been disabled");
 	}
 }
