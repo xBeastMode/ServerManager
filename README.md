@@ -1,4 +1,4 @@
-![alt tag](https://s31.postimg.org/xlmh5tnqj/pic.png)
+![alt tag](https://s31.postimg.org/i5ma4vdmz/pic_0.png)
 
 [![Join the chat at https://gitter.im/MCrafterss/ServerManager](https://badges.gitter.im/MCrafterss/ServerManager.svg)](https://gitter.im/MCrafterss/ServerManager?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
