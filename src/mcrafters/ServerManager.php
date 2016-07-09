@@ -68,9 +68,9 @@ class ServerManager extends PluginBase implements Listener
     public function onPlace(BlockPlaceEvent $bpe)
     {
         if($this->cfg->get("BlockPlacing") == false or $this->cfg->get("BlockPlacing") == disabled){
-        if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
-            $bbe->getPlayer()->sendMessage($prefix . $this->cfgm->get("BlockPlacing"));
-        $bbe->setCancelled();
+        if(!$bpe->getPlayer()->hasPermission('servermanager.bypass')){
+            $bpe->getPlayer()->sendMessage($prefix . $this->cfgm->get("BlockPlacing"));
+        $bpe->setCancelled();
     }
 	}
 }
@@ -86,13 +86,13 @@ class ServerManager extends PluginBase implements Listener
     public function onChat(PlayerChatEvent $pce)
     {
         if($this->cfg->get("Chatting") == false or $this->cfg->get("Chatting") == disabled){
-            if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
-                $bbe->getPlayer()->sendMessage($prefix . $this->cfgm->get("Chatting"));
-                $bbe->setCancelled();
+            if(!$pce->getPlayer()->hasPermission('servermanager.bypass')){
+                $pce->getPlayer()->sendMessage($prefix . $this->cfgm->get("Chatting"));
+                $pce->setCancelled();
             }
         }
     }
-    public function onDropItem(PlayerDropItemEvent $pdie)
+    public function onDropItem(PlayerDropItemEvent $bbe)
     {
         if($this->cfg->get("BlockBreaking") == false or $this->cfg->get("BlockBreaking") == disabled){
             if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
@@ -101,7 +101,7 @@ class ServerManager extends PluginBase implements Listener
             }
         }
     }
-    public function onDeath(PlayerDeathEvent $pde)
+    public function onDeath(PlayerDeathEvent $bbe)
     {
         if($this->cfg->get("Death") == false or $this->cfg->get("Death") == disabled){
             if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
