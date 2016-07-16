@@ -4,4 +4,4 @@
 
 The Ultimate Managing Plugin
 
-Plugin Development Havent Started Yet
+#Plugin Development have started watch the plugin resp. to stay tuned the plugin will be released in two weeks
