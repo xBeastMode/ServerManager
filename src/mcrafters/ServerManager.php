@@ -50,11 +50,10 @@ class ServerManager extends PluginBase implements Listener
     public $cfg;
 
     public $cfgm;
-    
-    public $prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] "
-
+   
     public function onEnable()
     {
+    	$prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] ";
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->getServer()->getLogger()->info($prefix . SM::GREEN . " has been enabled");
         $this->getServer()->getLogger()->info($prefix . SM::DARK_RED . " PLEASE NOTE:" . SM::DARK_PURPLE . " The Plugin Is Still In Development So for now it is not completely working. Please check back later");
@@ -92,16 +91,16 @@ class ServerManager extends PluginBase implements Listener
             }
         }
     }
-    public function onDropItem(PlayerDropItemEvent $bbe)
+    public function onDropItem(PlayerDropItemEvent $pdie)
     {
-        if($this->cfg->get("BlockBreaking") == false or $this->cfg->get("BlockBreaking") == disabled){
+        if($this->cfg->get("ItemDrop") == false or $this->cfg->get("ItemDrop") == disabled){
             if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
                $bbe->getPlayer()->sendMessage($prefix . $this->cfgm->get("ItemDrop"));
                 $bbe->setCancelled();
             }
         }
     }
-    public function onDeath(PlayerDeathEvent $bbe)
+    public function onDeath(PlayerDeathEvent $pde)
     {
         if($this->cfg->get("Death") == false or $this->cfg->get("Death") == disabled){
             if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
