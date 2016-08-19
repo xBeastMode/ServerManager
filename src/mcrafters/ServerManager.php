@@ -40,8 +40,6 @@ use pocketmine\event\player\PlayerAchievementAwardedEvent;
 use pocketmine\event\entity\ExplosionPrimeEvent;
 use pocketmine\event\entity\ItemDespawnEvent;
 use pocketmine\event\inventory\InventoryOpenEvent;
-use pocketmine\event\inventory\FurnaceBurnEvent;
-use pocketmine\event\inventory\FurnaceSmeltEvent;
 use pocketmine\event\inventory\InventoryPickupItemEvent;
 use pocketmine\event\inventory\CraftItemEvent;
 
@@ -109,6 +107,115 @@ class ServerManager extends PluginBase implements Listener
             }
         }
     }
+    public function onGameModeChange(PlayerGameModeChangeEvent $pgmce)
+    {
+        if ($this->cfg->get("GameModeChange") == false or $this->cfg->get("GameModeChange") == disabled) {
+            if (!$pgmce->getPlayer()->hasPermission('servermanager.bypass')) {
+                $pgmce->getPlayer()->sendMessage($prefix . $this->cfgm->get("GameModeChange"));
+                $pgmce->setCancelled();
+            }
+        }
+    }
+
+    public function onCommandPreprocess (PlayerCommandPreprocessEvent $pcpe){
+                if ($this->cfg->get("Commands") == false or $this->cfg->get("Commands") == disabled) {
+            if (!$cpe->getPlayer()->hasPermission('servermanager.bypass')) {
+                $pcpe->getPlayer()->sendMessage($prefix . $this->cfgm->get("Commands"));
+                $pcpe->setCancelled();
+            }
+}
+}
+    public function onBucket (PlayerBucketEvent $pbe){
+        if ($this->cfg->get("Bucket") == false or $this->cfg->get("Bucket") == disabled) {
+            if (!$pbe->getPlayer()->hasPermission('servermanager.bypass')) {
+                $pbe->getPlayer()->sendMessage($prefix . $this->cfgm->get("Bucket"));
+                $pbe->setCancelled();
+            }
+        }
+    }
+    public function onInteract (PlayerInteractEvent $pie){
+        if ($this->cfg->get("PVP") == false or $this->cfg->get("PVP") == disabled) {
+            if (!$pie->getPlayer()->hasPermission('servermanager.bypass')) {
+                $pie->getPlayer()->sendMessage($prefix . $this->cfgm->get("PVP"));
+                $pie->setCancelled();
+            }
+        }
+    }
+    public function onItemConsume (PlayerItemConsumeEvent $pice){
+        if ($this->cfg->get("Item Damage") == false or $this->cfg->get("Item Damage") == disabled) {
+            if (!$pice->getPlayer()->hasPermission('servermanager.bypass')) {
+                $pice->getPlayer()->sendMessage($prefix . $this->cfgm->get("Item Damage"));
+                $pice->setCancelled();
+            }
+        }
+    }
+    public function onKick (PlayerKickEvent $pke){
+        if ($this->cfg->get("Player Kicking") == false or $this->cfg->get("Player Kicking") == disabled) {
+            if (!$pke->getPlayer()->hasPermission('servermanager.bypass')) {
+                $pke->getPlayer()->sendMessage($prefix . $this->cfgm->get("Player Kick"));
+                $pke->setCancelled();
+            }
+        }
+    }
+    public function onRespawn (PlayerRespawnEvent $pre){
+        if ($this->cfg->get("Player Respawning") == false or $this->cfg->get("Player Respawning") == disabled) {
+            if (!$pre->getPlayer()->hasPermission('servermanager.bypass')) {
+                $pre->getPlayer()->sendMessage($prefix . $this->cfgm->get("Player Respawning"));
+                $pre->setCancelled();
+            }
+        }
+    }
+    public function onToggleSneak (PlayerToggleSneakEvent $ptse){
+        if ($this->cfg->get("Sneaking") == false or $this->cfg->get("Sneaking") == disabled) {
+            if (!$pre->getPlayer()->hasPermission('servermanager.bypass')) {
+                $pre->getPlayer()->sendMessage($prefix . $this->cfgm->get("Sneaking"));
+                $pre->setCancelled();
+            }
+        }
+    }
+    public function onAchievementAwarded (PlayerAchievementAwardedEvent $paae){
+        if ($this->cfg->get("Achievements") == false or $this->cfg->get("Achievements") == disabled) {
+            if (!$paae->getPlayer()->hasPermission('servermanager.bypass')) {
+                $paae->getPlayer()->sendMessage($prefix . $this->cfgm->get("Achievements"));
+                $paae->setCancelled();
+            }
+        }
+    }
+    public function onExplosionsPrime (ExplosionPrimeEvent $epe){
+        if ($this->cfg->get("Explosions") == false or $this->cfg->get("Explosions") == disabled) {
+            if (!$epe->getPlayer()->hasPermission('servermanager.bypass')) {
+                $epe->getPlayer()->sendMessage($prefix . $this->cfgm->get("Explosions"));
+                $epe->setCancelled();
+            }
+        }
+    }
+    public function onOpen (InventoryOpenEvent $ioe){
+        if ($this->cfg->get("Inventory Open") == false or $this->cfg->get("Inventory Open") == disabled) {
+            if (!$ioe->getPlayer()->hasPermission('servermanager.bypass')) {
+                $ioe->getPlayer()->sendMessage($prefix . $this->cfgm->get("Inventory Open"));
+                $ioe->setCancelled();
+            }
+        }
+    }
+    public function onPickupItem (InventoryPickupItemEvent $ipie){
+        if ($this->cfg->get("Item Pickup") == false or $this->cfg->get("Item Pickup") == disabled) {
+            if (!$ipie->getPlayer()->hasPermission('servermanager.bypass')) {
+                $ipie->getPlayer()->sendMessage($prefix . $this->cfgm->get("Item Pickup"));
+                $ipie->setCancelled();
+            }
+        }
+    }
+    public function onCraftItem (CraftItemEvent $cie){
+        if ($this->cfg->get("Item Crafting") == false or $this->cfg->get("Item Crafting") == disabled) {
+            if (!$cie->getPlayer()->hasPermission('servermanager.bypass')) {
+                $cie->getPlayer()->sendMessage($prefix . $this->cfgm->get("Item Crafting"));
+                $cie->setCancelled();
+            }
+        }
+    }
+
+
+
     public function onDisable()
 	{
 		$this->getLogger()->info($prefix . SM::RED . " has been disabled");
