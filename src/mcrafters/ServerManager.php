@@ -30,7 +30,6 @@ use pocketmine\event\player\PlayerDropItemEvent;
 use pocketmine\event\player\PlayerGameModeChangeEvent;
 use pocketmine\event\player\PlayerCommandPreprocessEvent;
 use pocketmine\event\player\PlayerDeathEvent;
-use pocketmine\event\player\PlayerBucketEvent;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\player\PlayerItemConsumeEvent;
 use pocketmine\event\player\PlayerKickEvent;
@@ -125,14 +124,6 @@ class ServerManager extends PluginBase implements Listener
             }
 }
 }
-    public function onBucket (PlayerBucketEvent $pbe){
-        if ($this->cfg->get("Bucket") == false or $this->cfg->get("Bucket") == disabled) {
-            if (!$pbe->getPlayer()->hasPermission('servermanager.bypass')) {
-                $pbe->getPlayer()->sendMessage($prefix . $this->cfgm->get("Bucket"));
-                $pbe->setCancelled();
-            }
-        }
-    }
     public function onInteract (PlayerInteractEvent $pie){
         if ($this->cfg->get("PVP") == false or $this->cfg->get("PVP") == disabled) {
             if (!$pie->getPlayer()->hasPermission('servermanager.bypass')) {
