@@ -2,4 +2,29 @@
 
 [![Join the chat at https://gitter.im/MCrafterss/ServerManager](https://badges.gitter.im/MCrafterss/ServerManager.svg)](https://gitter.im/MCrafterss/ServerManager?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-#Plugin Development have started watch the plugin resp. to stay tuned the plugin will be released in two weeks
+|   Developers  |         More Information            |
+|---------------|-------------------------------------|
+| Amir Emad |     Main Developer of The Plugin       |
+
+Server-Manager is used to enable and disable many things in your server.
+Note :You can Customize Everything in Config.yml and Messages.yml
+Here is a list of things you can manage.
+
+| Things You Can Manage |
+|-----------------------|
+| Block Placing |
+| Block Breaking |
+| Chatting |
+| Item Drop |
+| Death |
+| GameModeChange |
+| Commands |
+| PVP |
+| Item Damage |
+| Player Kicking |
+| Sneaking |
+| Achievements |
+| Explosions |
+| Inventory Open |
+| Item Pickup |
+| Item Crafting |
