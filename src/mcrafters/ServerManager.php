@@ -169,16 +169,6 @@ class ServerManager extends PluginBase implements Listener
             }
         }
     }
-    public function onRespawn (PlayerRespawnEvent $pre){
-        if ($this->cfg->get("Player Respawning") == false or $this->cfg->get("Player Respawning") == disable) {
-            if (!$pre->getPlayer()->hasPermission('servermanager.bypass')) {
-                if(!$this->cfgm->get("Player Respawning") == null) {
-                    $pre->getPlayer()->sendMessage($prefix2 . " : " . str_replace("&", "§", $this->cfgm->get("Player Respawning")));
-                }
-                    $pre->setCancelled();
-            }
-        }
-    }
     public function onToggleSneak (PlayerToggleSneakEvent $ptse){
         if ($this->cfg->get("Sneaking") == false or $this->cfg->get("Sneaking") == disable) {
             if (!$pre->getPlayer()->hasPermission('servermanager.bypass')) {
