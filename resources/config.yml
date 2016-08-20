@@ -8,4 +8,41 @@
 #                                                                 __/ |             #
 #         The Ultimate Server Managing Plugin                    |___/              #
 #####################################################################################
-BlockBreaking: false
+#
+# The Prefix of the messages sent to players from server manager
+Prefix: &eServer&4Manager
+#
+BlockPlacing:
+#
+BlockBreaking:
+#
+Chatting:
+#
+ItemDrop:
+#
+Death:
+#
+GameModeChange:
+#
+Commands:
+#
+PVP:
+#
+Item Damage:
+#
+Player Kicking:
+#
+Player Respawning:
+#
+Sneaking:
+#
+Achievements:
+#
+Explosions:
+#
+Inventory Open:
+#
+Item Pickup:
+#
+Item Crafting:
+#######################################################################################################################
