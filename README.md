@@ -6,6 +6,8 @@
 |---------------|-------------------------------------|
 | Amir Emad |     Main Developer of The Plugin       |
 
+| Website | http://mcrafterss.github.io/ServerManager |
+
 Server-Manager is used to turn on and off many things in your server.
 Note :You can Customize Everything in Config.yml and Messages.yml
 Here is a list of things you can manage.
