@@ -8,4 +8,44 @@
 #                                                                 __/ |             #
 #         The Ultimate Server Managing Plugin                    |___/              #
 #####################################################################################
-BlockBreaking: Sorry! You are not allowed to break blocks
+#
+Prefix: &eServer&4Manager
+#
+# To enable a message right text in it
+# Example : if chat is disabled and message in chatting is set to you cant chat player will get " you cant chat "
+# Note : that messages wont display unless that thing is disabled in the config.yml
+#
+BlockPlacing:
+#
+BlockBreaking:
+#
+Chatting:
+#
+ItemDrop:
+#
+Death:
+#
+GameModeChange:
+#
+Commands:
+#
+PVP:
+#
+Item Damage:
+#
+Player Kicking:
+#
+Player Respawning:
+#
+Sneaking:
+#
+Achievements:
+#
+Explosions:
+#
+Inventory Open:
+#
+Item Pickup:
+#
+Item Crafting:
+#######################################################################################################################
