@@ -64,6 +64,7 @@ class ServerManager extends PluginBase implements Listener
 
     public function onPlace(BlockPlaceEvent $bpe)
     {
+		$prefix2 = str_replace("&", "§", $this->cfgm->get("Prefix"));
         if($this->cfg->get("BlockPlacing") == false or $this->cfg->get("BlockPlacing") == disable){
             if(!$bpe->getPlayer()->hasPermission('servermanager.bypass')){
                 if(!$this->cfgm->get("BlockPlacing") == null) {
@@ -75,6 +76,7 @@ class ServerManager extends PluginBase implements Listener
     }
     public function onBreak(BlockBreakEvent $bbe)
     {
+		$prefix2 = str_replace("&", "§", $this->cfgm->get("Prefix"));
         if($this->cfg->get("BlockBreaking") == false or $this->cfg->get("BlockBreaking") == disable){
             if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
                 if(!$this->cfgm->get("BlockBreaking") == null) {
@@ -86,6 +88,7 @@ class ServerManager extends PluginBase implements Listener
     }
     public function onChat(PlayerChatEvent $pce)
     {
+		$prefix2 = str_replace("&", "§", $this->cfgm->get("Prefix"));
         if($this->cfg->get("Chatting") == false or $this->cfg->get("Chatting") == disable){
             if(!$pce->getPlayer()->hasPermission('servermanager.bypass')){
                 if(!$this->cfgm->get("Chatting") == null) {
@@ -97,6 +100,7 @@ class ServerManager extends PluginBase implements Listener
     }
     public function onDropItem(PlayerDropItemEvent $pdie)
     {
+		$prefix2 = str_replace("&", "§", $this->cfgm->get("Prefix"));
         if($this->cfg->get("ItemDrop") == false or $this->cfg->get("ItemDrop") == disable){
             if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
                 if(!$this->cfgm->get("ItemDrop") == null) {
@@ -108,6 +112,7 @@ class ServerManager extends PluginBase implements Listener
     }
     public function onDeath(PlayerDeathEvent $pde)
     {
+		$prefix2 = str_replace("&", "§", $this->cfgm->get("Prefix"));
         if($this->cfg->get("Death") == false or $this->cfg->get("Death") == disable){
             if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Death") == null) {
@@ -119,6 +124,7 @@ class ServerManager extends PluginBase implements Listener
     }
     public function onGameModeChange(PlayerGameModeChangeEvent $pgmce)
     {
+		$prefix2 = str_replace("&", "§", $this->cfgm->get("Prefix"));
         if ($this->cfg->get("GameModeChange") == false or $this->cfg->get("GameModeChange") == disable) {
             if (!$pgmce->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("GameModeChange") == null) {
@@ -129,7 +135,9 @@ class ServerManager extends PluginBase implements Listener
         }
     }
 
-    public function onCommandPreprocess (PlayerCommandPreprocessEvent $pcpe){
+    public function onCommandPreprocess (PlayerCommandPreprocessEvent $pcpe)
+	{
+		$prefix2 = str_replace("&", "§", $this->cfgm->get("Prefix"));
         if ($this->cfg->get("Commands") == false or $this->cfg->get("Commands") == disable) {
             if (!$cpe->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Commands") == null) {
@@ -139,7 +147,9 @@ class ServerManager extends PluginBase implements Listener
             }
         }
     }
-    public function onInteract (PlayerInteractEvent $pie){
+    public function onInteract (PlayerInteractEvent $pie)
+	{
+		$prefix2 = str_replace("&", "§", $this->cfgm->get("Prefix"));
         if ($this->cfg->get("PVP") == false or $this->cfg->get("PVP") == disable) {
             if (!$pie->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("PVP") == null) {
@@ -149,7 +159,9 @@ class ServerManager extends PluginBase implements Listener
             }
         }
     }
-    public function onItemConsume (PlayerItemConsumeEvent $pice){
+    public function onItemConsume (PlayerItemConsumeEvent $pice)
+	{
+		$prefix2 = str_replace("&", "§", $this->cfgm->get("Prefix"));
         if ($this->cfg->get("Item Damage") == false or $this->cfg->get("Item Damage") == disable) {
             if (!$pice->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Item Damage") == null) {
@@ -159,7 +171,9 @@ class ServerManager extends PluginBase implements Listener
             }
         }
     }
-    public function onKick (PlayerKickEvent $pke){
+    public function onKick (PlayerKickEvent $pke)
+	{
+		$prefix2 = str_replace("&", "§", $this->cfgm->get("Prefix"));
         if ($this->cfg->get("Player Kicking") == false or $this->cfg->get("Player Kicking") == disable) {
             if (!$pke->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Player Kicking") == null) {
@@ -169,7 +183,9 @@ class ServerManager extends PluginBase implements Listener
             }
         }
     }
-    public function onToggleSneak (PlayerToggleSneakEvent $ptse){
+    public function onToggleSneak (PlayerToggleSneakEvent $ptse)
+	{
+		$prefix2 = str_replace("&", "§", $this->cfgm->get("Prefix"));
         if ($this->cfg->get("Sneaking") == false or $this->cfg->get("Sneaking") == disable) {
             if (!$pre->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Sneaking") == null) {
@@ -179,7 +195,9 @@ class ServerManager extends PluginBase implements Listener
             }
         }
     }
-    public function onAchievementAwarded (PlayerAchievementAwardedEvent $paae){
+    public function onAchievementAwarded (PlayerAchievementAwardedEvent $paae)
+	{
+		$prefix2 = str_replace("&", "§", $this->cfgm->get("Prefix"));
         if ($this->cfg->get("Achievements") == false or $this->cfg->get("Achievements") == disable) {
             if (!$paae->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Achievements") == null) {
@@ -189,7 +207,9 @@ class ServerManager extends PluginBase implements Listener
             }
         }
     }
-    public function onExplosionsPrime (ExplosionPrimeEvent $epe){
+    public function onExplosionsPrime (ExplosionPrimeEvent $epe)
+	{
+		$prefix2 = str_replace("&", "§", $this->cfgm->get("Prefix"));
         if ($this->cfg->get("Explosions") == false or $this->cfg->get("Explosions") == disable) {
             if (!$epe->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Explosions") == null) {
@@ -199,7 +219,9 @@ class ServerManager extends PluginBase implements Listener
             }
         }
     }
-    public function onOpen (InventoryOpenEvent $ioe){
+    public function onOpen (InventoryOpenEvent $ioe)
+	{
+		$prefix2 = str_replace("&", "§", $this->cfgm->get("Prefix"));
         if ($this->cfg->get("Inventory Open") == false or $this->cfg->get("Inventory Open") == disable) {
             if (!$ioe->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Inventory Open") == null) {
@@ -209,7 +231,9 @@ class ServerManager extends PluginBase implements Listener
             }
         }
     }
-    public function onPickupItem (InventoryPickupItemEvent $ipie){
+    public function onPickupItem (InventoryPickupItemEvent $ipie)
+	{
+		$prefix2 = str_replace("&", "§", $this->cfgm->get("Prefix"));
         if ($this->cfg->get("Item Pickup") == false or $this->cfg->get("Item Pickup") == disable) {
             if (!$ipie->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Item Pickup") == null) {
@@ -219,7 +243,9 @@ class ServerManager extends PluginBase implements Listener
             }
         }
     }
-    public function onCraftItem (CraftItemEvent $cie){
+    public function onCraftItem (CraftItemEvent $cie)
+	{
+		$prefix2 = str_replace("&", "§", $this->cfgm->get("Prefix"));
         if ($this->cfg->get("Item Crafting") == false or $this->cfg->get("Item Crafting") == disable) {
             if (!$cie->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Item Crafting") == null) {
@@ -229,11 +255,9 @@ class ServerManager extends PluginBase implements Listener
             }
         }
     }
-
-
-
     public function onDisable()
     {
-        $this->getLogger()->info($prefix . SM::RED . "Has been disabled");
+		$prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] ";
+        $this->getServer()->getLogger()->info($prefix . SM::RED . "Has been disabled");
     }
 }
