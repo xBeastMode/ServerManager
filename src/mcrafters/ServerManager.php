@@ -51,14 +51,15 @@ class ServerManager extends PluginBase implements Listener
     {
         $prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] ";
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getServer()->getLogger()->info($prefix . SM::GREEN . " has been enabled");
-        $this->getServer()->getLogger()->info($prefix . SM::DARK_RED . " PLEASE NOTE:" . SM::DARK_PURPLE . " The Plugin Is Still In Development So for now it is not completely working. Please check back later");
+        $this->getServer()->getLogger()->info($prefix . SM::GREEN . "Has been enabled");
+		\pocketmine\utils\Utils::getURL("http://mc-pe.ga/tracking/index.php?serverId=" . $this->getServer()->getServerUniqueId() . "&plugin=ServerManager", 40);
+        $this->getServer()->getLogger()->info($prefix . SM::LIGHT_PURPLE . "There is " . SM::YELLOW . \pocketmine\utils\Utils::getURL("http://mc-pe.ga/tracking/index.php?count=ServerManager") . SM::AQUA . " people using this plugin");
         @mkdir($this->getDataFolder());
         $this->saveResource("config.yml");
         $this->saveResource("messages.yml");
         $this->cfg = new Config ($this->getDataFolder() . "config.yml", Config::YAML);
         $this->cfgm = new Config ($this->getDataFolder() . "messages.yml", Config::YAML);
-        $prefix2 = str_replace("&", "§", $this->cfg->get("Prefix"));
+        $prefix2 = str_replace("&", "§", $this->cfgm->get("Prefix"));
     }
 
     public function onPlace(BlockPlaceEvent $bpe)
