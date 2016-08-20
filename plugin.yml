@@ -1,6 +1,6 @@
 name: ServerManager
 main: mcrafters\ServerManager
-version: 1.0.0 Development
+version: 1.0.0 Experimental
 api: [1.0.0, 2.0.0]
 
 load: STARTUP
