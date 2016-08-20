@@ -9,9 +9,6 @@
 #         The Ultimate Server Managing Plugin                    |___/              #
 #####################################################################################
 #
-# 
-Prefix: &eServer&4Manager
-#
 # To enable or disable the following things type in it true or false
 #
 BlockPlacing: true
