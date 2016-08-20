@@ -66,7 +66,7 @@ class ServerManager extends PluginBase implements Listener
     {
         if($this->cfg->get("BlockPlacing") == false or $this->cfg->get("BlockPlacing") == disabled){
             if(!$bpe->getPlayer()->hasPermission('servermanager.bypass')){
-                $bpe->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("BlockPlacing"));
+                $bpe->getPlayer()->sendMessage($prefix2 . " : " . str_replace("&", "§", $this->cfgm->get("BlockPlacing")));
                 $bpe->setCancelled();
             }
         }
@@ -75,7 +75,7 @@ class ServerManager extends PluginBase implements Listener
     {
         if($this->cfg->get("BlockBreaking") == false or $this->cfg->get("BlockBreaking") == disabled){
             if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
-                $bbe->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("BlockBreaking"));
+                $bbe->getPlayer()->sendMessage($prefix2 . " : " . str_replace("&", "§", $this->cfgm->get("BlockBreaking")));
                 $bbe->setCancelled();
             }
         }
@@ -84,7 +84,7 @@ class ServerManager extends PluginBase implements Listener
     {
         if($this->cfg->get("Chatting") == false or $this->cfg->get("Chatting") == disabled){
             if(!$pce->getPlayer()->hasPermission('servermanager.bypass')){
-                $pce->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Chatting"));
+                $pce->getPlayer()->sendMessage($prefix2 . " : " . str_replace("&", "§", $this->cfgm->get("Chatting")));
                 $pce->setCancelled();
             }
         }
@@ -93,7 +93,7 @@ class ServerManager extends PluginBase implements Listener
     {
         if($this->cfg->get("ItemDrop") == false or $this->cfg->get("ItemDrop") == disabled){
             if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
-                $bbe->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("ItemDrop"));
+                $bbe->getPlayer()->sendMessage($prefix2 . " : " . str_replace("&", "§", $this->cfgm->get("ItemDrop")));
                 $bbe->setCancelled();
             }
         }
@@ -102,7 +102,7 @@ class ServerManager extends PluginBase implements Listener
     {
         if($this->cfg->get("Death") == false or $this->cfg->get("Death") == disabled){
             if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
-                $bbe->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Death"));
+                $bbe->getPlayer()->sendMessage($prefix2 . " : " . str_replace("&", "§", $this->cfgm->get("Death")));
                 $bbe->setCancelled();
             }
         }
@@ -111,7 +111,7 @@ class ServerManager extends PluginBase implements Listener
     {
         if ($this->cfg->get("GameModeChange") == false or $this->cfg->get("GameModeChange") == disabled) {
             if (!$pgmce->getPlayer()->hasPermission('servermanager.bypass')) {
-                $pgmce->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("GameModeChange"));
+                $pgmce->getPlayer()->sendMessage($prefix2 . " : " . str_replace("&", "§", $this->cfgm->get("GameModeChange")));
                 $pgmce->setCancelled();
             }
         }
@@ -120,7 +120,7 @@ class ServerManager extends PluginBase implements Listener
     public function onCommandPreprocess (PlayerCommandPreprocessEvent $pcpe){
         if ($this->cfg->get("Commands") == false or $this->cfg->get("Commands") == disabled) {
             if (!$cpe->getPlayer()->hasPermission('servermanager.bypass')) {
-                $pcpe->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Commands"));
+                $pcpe->getPlayer()->sendMessage($prefix2 . " : " . str_replace("&", "§", $this->cfgm->get("Commands")));
                 $pcpe->setCancelled();
             }
         }
@@ -128,7 +128,7 @@ class ServerManager extends PluginBase implements Listener
     public function onInteract (PlayerInteractEvent $pie){
         if ($this->cfg->get("PVP") == false or $this->cfg->get("PVP") == disabled) {
             if (!$pie->getPlayer()->hasPermission('servermanager.bypass')) {
-                $pie->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("PVP"));
+                $pie->getPlayer()->sendMessage($prefix2 . " : " . str_replace("&", "§", $this->cfgm->get("PVP")));
                 $pie->setCancelled();
             }
         }
@@ -136,7 +136,7 @@ class ServerManager extends PluginBase implements Listener
     public function onItemConsume (PlayerItemConsumeEvent $pice){
         if ($this->cfg->get("Item Damage") == false or $this->cfg->get("Item Damage") == disabled) {
             if (!$pice->getPlayer()->hasPermission('servermanager.bypass')) {
-                $pice->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Item Damage"));
+                $pice->getPlayer()->sendMessage($prefix2 . " : " . str_replace("&", "§", $this->cfgm->get("Item Damage")));
                 $pice->setCancelled();
             }
         }
@@ -144,7 +144,7 @@ class ServerManager extends PluginBase implements Listener
     public function onKick (PlayerKickEvent $pke){
         if ($this->cfg->get("Player Kicking") == false or $this->cfg->get("Player Kicking") == disabled) {
             if (!$pke->getPlayer()->hasPermission('servermanager.bypass')) {
-                $pke->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Player Kick"));
+                $pke->getPlayer()->sendMessage($prefix2 . " : " . str_replace("&", "§", $this->cfgm->get("Player Kick")));
                 $pke->setCancelled();
             }
         }
@@ -152,7 +152,7 @@ class ServerManager extends PluginBase implements Listener
     public function onRespawn (PlayerRespawnEvent $pre){
         if ($this->cfg->get("Player Respawning") == false or $this->cfg->get("Player Respawning") == disabled) {
             if (!$pre->getPlayer()->hasPermission('servermanager.bypass')) {
-                $pre->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Player Respawning"));
+                $pre->getPlayer()->sendMessage($prefix2 . " : " . str_replace("&", "§", $this->cfgm->get("Player Respawning")));
                 $pre->setCancelled();
             }
         }
@@ -160,7 +160,7 @@ class ServerManager extends PluginBase implements Listener
     public function onToggleSneak (PlayerToggleSneakEvent $ptse){
         if ($this->cfg->get("Sneaking") == false or $this->cfg->get("Sneaking") == disabled) {
             if (!$pre->getPlayer()->hasPermission('servermanager.bypass')) {
-                $pre->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Sneaking"));
+                $pre->getPlayer()->sendMessage($prefix2 . " : " . str_replace("&", "§", $this->cfgm->get("Sneaking")));
                 $pre->setCancelled();
             }
         }
@@ -168,7 +168,7 @@ class ServerManager extends PluginBase implements Listener
     public function onAchievementAwarded (PlayerAchievementAwardedEvent $paae){
         if ($this->cfg->get("Achievements") == false or $this->cfg->get("Achievements") == disabled) {
             if (!$paae->getPlayer()->hasPermission('servermanager.bypass')) {
-                $paae->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Achievements"));
+                $paae->getPlayer()->sendMessage($prefix2 . " : " . str_replace("&", "§", $this->cfgm->get("Achievements")));
                 $paae->setCancelled();
             }
         }
@@ -176,7 +176,7 @@ class ServerManager extends PluginBase implements Listener
     public function onExplosionsPrime (ExplosionPrimeEvent $epe){
         if ($this->cfg->get("Explosions") == false or $this->cfg->get("Explosions") == disabled) {
             if (!$epe->getPlayer()->hasPermission('servermanager.bypass')) {
-                $epe->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Explosions"));
+                $epe->getPlayer()->sendMessage($prefix2 . " : " . str_replace("&", "§", $this->cfgm->get("Explosions")));
                 $epe->setCancelled();
             }
         }
@@ -184,7 +184,7 @@ class ServerManager extends PluginBase implements Listener
     public function onOpen (InventoryOpenEvent $ioe){
         if ($this->cfg->get("Inventory Open") == false or $this->cfg->get("Inventory Open") == disabled) {
             if (!$ioe->getPlayer()->hasPermission('servermanager.bypass')) {
-                $ioe->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Inventory Open"));
+                $ioe->getPlayer()->sendMessage($prefix2 . " : " . str_replace("&", "§", $this->cfgm->get("Inventory Open")));
                 $ioe->setCancelled();
             }
         }
@@ -192,7 +192,7 @@ class ServerManager extends PluginBase implements Listener
     public function onPickupItem (InventoryPickupItemEvent $ipie){
         if ($this->cfg->get("Item Pickup") == false or $this->cfg->get("Item Pickup") == disabled) {
             if (!$ipie->getPlayer()->hasPermission('servermanager.bypass')) {
-                $ipie->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Item Pickup"));
+                $ipie->getPlayer()->sendMessage($prefix2 . " : " . str_replace("&", "§", $this->cfgm->get("Item Pickup")));
                 $ipie->setCancelled();
             }
         }
@@ -200,7 +200,7 @@ class ServerManager extends PluginBase implements Listener
     public function onCraftItem (CraftItemEvent $cie){
         if ($this->cfg->get("Item Crafting") == false or $this->cfg->get("Item Crafting") == disabled) {
             if (!$cie->getPlayer()->hasPermission('servermanager.bypass')) {
-                $cie->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Item Crafting"));
+                $cie->getPlayer()->sendMessage($prefix2 . " : " . str_replace("&", "§", $this->cfgm->get("Item Crafting")));
                 $cie->setCancelled();
             }
         }
