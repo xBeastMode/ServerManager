@@ -234,6 +234,6 @@ class ServerManager extends PluginBase implements Listener
 
     public function onDisable()
     {
-        $this->getLogger()->info($prefix . SM::RED . "has been disable");
+        $this->getLogger()->info($prefix . SM::RED . "Has been disabled");
     }
 }
