@@ -9,7 +9,7 @@
 #         The Ultimate Server Managing Plugin                    |___/              #
 #####################################################################################
 #
-Prefix: &eServer&4Manager
+Prefix: ServerManager
 #
 # To enable a message right text in it
 # Example : if chat is disabled and message in chatting is set to you cant chat player will get " you cant chat "
