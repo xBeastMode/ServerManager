@@ -9,37 +9,33 @@
 #         The Ultimate Server Managing Plugin                    |___/              #
 #####################################################################################
 #
-# To enable or disable the following things type in it true or false
+# To enable or disable the following things type true or false between the ""
 #
-BlockPlacing: true
+BlockPlacing: "true"
 #
-BlockBreaking: true
+BlockBreaking: "true"
 #
-Chatting: true
+ItemDrop: "true"
 #
-ItemDrop: true
+Death: "true"
 #
-Death: true
+GameModeChange: "true"
 #
-GameModeChange: true
+PVP: "true"
 #
-Commands: true
+Item Damage: "true"
 #
-PVP: true
+Player Kicking: "true"
 #
-Item Damage: true
+Sneaking: "true"
 #
-Player Kicking: true
+Achievements: "true"
 #
-Sneaking: true
+Explosions: "true"
 #
-Achievements: true
+Inventory Open: "true"
 #
-Explosions: true
+Item Pickup: "true"
 #
-Inventory Open: true
-#
-Item Pickup: true
-#
-Item Crafting: true
+Item Crafting: "true"
 #######################################################################################################################
