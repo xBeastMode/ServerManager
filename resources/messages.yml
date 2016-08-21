@@ -9,6 +9,8 @@
 #         The Ultimate Server Managing Plugin                    |___/              #
 #####################################################################################
 #
+Prefix: [$6Server$4Manager]
+#
 # To enable a message right text in it
 # Example : if chat is disabled and message in chatting is set to you cant chat player will get " you cant chat "
 # Note : that messages wont display unless that thing is disabled in the config.yml
