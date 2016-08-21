@@ -65,7 +65,7 @@ class ServerManager extends PluginBase implements Listener
     public function onPlace(BlockPlaceEvent $bpe)
     {
 		$prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] ";
-        if($this->cfg->get("BlockPlacing") == false or $this->cfg->get("BlockPlacing") == disable){
+        if($this->cfg->get("BlockPlacing") == "false" or $this->cfg->get("BlockPlacing") == "disable"){
             if(!$bpe->getPlayer()->hasPermission('servermanager.bypass')){
                 if(!$this->cfgm->get("BlockPlacing") == null) {
                     $bpe->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("BlockPlacing"));
@@ -77,7 +77,7 @@ class ServerManager extends PluginBase implements Listener
     public function onBreak(BlockBreakEvent $bbe)
     {
 		$prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] ";
-        if($this->cfg->get("BlockBreaking") == false or $this->cfg->get("BlockBreaking") == disable){
+        if($this->cfg->get("BlockBreaking") == "false" or $this->cfg->get("BlockBreaking") == "disable"){
             if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
                 if(!$this->cfgm->get("BlockBreaking") == null) {
                     $bbe->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("BlockBreaking"));
@@ -89,7 +89,7 @@ class ServerManager extends PluginBase implements Listener
     public function onChat(PlayerChatEvent $pce)
     {
 		$prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] ";
-        if($this->cfg->get("Chatting") == false or $this->cfg->get("Chatting") == disable){
+        if($this->cfg->get("Chatting") == "false" or $this->cfg->get("Chatting") == "disable"){
             if(!$pce->getPlayer()->hasPermission('servermanager.bypass')){
                 if(!$this->cfgm->get("Chatting") == null) {
                     $pce->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Chatting"));
@@ -101,7 +101,7 @@ class ServerManager extends PluginBase implements Listener
     public function onDropItem(PlayerDropItemEvent $pdie)
     {
 		$prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] ";
-        if($this->cfg->get("ItemDrop") == false or $this->cfg->get("ItemDrop") == disable){
+        if($this->cfg->get("ItemDrop") == "false" or $this->cfg->get("ItemDrop") == "disable"){
             if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
                 if(!$this->cfgm->get("ItemDrop") == null) {
                     $bbe->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("ItemDrop"));
@@ -113,7 +113,7 @@ class ServerManager extends PluginBase implements Listener
     public function onDeath(PlayerDeathEvent $pde)
     {
 		$prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] ";
-        if($this->cfg->get("Death") == false or $this->cfg->get("Death") == disable){
+        if($this->cfg->get("Death") == "false" or $this->cfg->get("Death") == "disable"){
             if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Death") == null) {
                 $bbe->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Death"));
@@ -125,7 +125,7 @@ class ServerManager extends PluginBase implements Listener
     public function onGameModeChange(PlayerGameModeChangeEvent $pgmce)
     {
 		$prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] ";
-        if ($this->cfg->get("GameModeChange") == false or $this->cfg->get("GameModeChange") == disable) {
+        if ($this->cfg->get("GameModeChange") == "false" or $this->cfg->get("GameModeChange") == "disable") {
             if (!$pgmce->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("GameModeChange") == null) {
                     $pgmce->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("GameModeChange"));
@@ -138,7 +138,7 @@ class ServerManager extends PluginBase implements Listener
     public function onCommandPreprocess (PlayerCommandPreprocessEvent $pcpe)
 	{
 		$prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] ";
-        if ($this->cfg->get("Commands") == false or $this->cfg->get("Commands") == disable) {
+        if ($this->cfg->get("Commands") == "false" or $this->cfg->get("Commands") == "disable") {
             if (!$pcpe->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Commands") == null) {
                     $pcpe->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Commands"));
@@ -150,7 +150,7 @@ class ServerManager extends PluginBase implements Listener
     public function onInteract (PlayerInteractEvent $pie)
 	{
 		$prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] ";
-        if ($this->cfg->get("PVP") == false or $this->cfg->get("PVP") == disable) {
+        if ($this->cfg->get("PVP") == "false" or $this->cfg->get("PVP") == "disable") {
             if (!$pie->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("PVP") == null) {
                     $pie->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("PVP"));
@@ -162,7 +162,7 @@ class ServerManager extends PluginBase implements Listener
     public function onItemConsume (PlayerItemConsumeEvent $pice)
 	{
 		$prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] ";
-        if ($this->cfg->get("Item Damage") == false or $this->cfg->get("Item Damage") == disable) {
+        if ($this->cfg->get("Item Damage") == "false" or $this->cfg->get("Item Damage") == "disable") {
             if (!$pice->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Item Damage") == null) {
                     $pice->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Item Damage"));
@@ -174,7 +174,7 @@ class ServerManager extends PluginBase implements Listener
     public function onKick (PlayerKickEvent $pke)
 	{
 		$prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] ";
-        if ($this->cfg->get("Player Kicking") == false or $this->cfg->get("Player Kicking") == disable) {
+        if ($this->cfg->get("Player Kicking") == "false" or $this->cfg->get("Player Kicking") == "disable") {
             if (!$pke->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Player Kicking") == null) {
                     $pke->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Player Kick"));
@@ -186,7 +186,7 @@ class ServerManager extends PluginBase implements Listener
     public function onToggleSneak (PlayerToggleSneakEvent $ptse)
 	{
 		$prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] ";
-        if ($this->cfg->get("Sneaking") == false or $this->cfg->get("Sneaking") == disable) {
+        if ($this->cfg->get("Sneaking") == "false" or $this->cfg->get("Sneaking") == "disable") {
             if (!$pre->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Sneaking") == null) {
                     $pre->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Sneaking"));
@@ -198,7 +198,7 @@ class ServerManager extends PluginBase implements Listener
     public function onAchievementAwarded (PlayerAchievementAwardedEvent $paae)
 	{
 		$prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] ";
-        if ($this->cfg->get("Achievements") == false or $this->cfg->get("Achievements") == disable) {
+        if ($this->cfg->get("Achievements") == "false" or $this->cfg->get("Achievements") == "disable") {
             if (!$paae->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Achievements") == null) {
                     $paae->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Achievements"));
@@ -210,7 +210,7 @@ class ServerManager extends PluginBase implements Listener
     public function onExplosionsPrime (ExplosionPrimeEvent $epe)
 	{
 		$prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] ";
-        if ($this->cfg->get("Explosions") == false or $this->cfg->get("Explosions") == disable) {
+        if ($this->cfg->get("Explosions") == "false" or $this->cfg->get("Explosions") == "disable") {
             if (!$epe->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Explosions") == null) {
                     $epe->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Explosions"));
@@ -222,7 +222,7 @@ class ServerManager extends PluginBase implements Listener
     public function onOpen (InventoryOpenEvent $ioe)
 	{
 		$prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] ";
-        if ($this->cfg->get("Inventory Open") == false or $this->cfg->get("Inventory Open") == disable) {
+        if ($this->cfg->get("Inventory Open") == "false" or $this->cfg->get("Inventory Open") == "disable") {
             if (!$ioe->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Inventory Open") == null) {
                     $ioe->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Inventory Open"));
@@ -234,7 +234,7 @@ class ServerManager extends PluginBase implements Listener
     public function onPickupItem (InventoryPickupItemEvent $ipie)
 	{
 		$prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] ";
-        if ($this->cfg->get("Item Pickup") == false or $this->cfg->get("Item Pickup") == disable) {
+        if ($this->cfg->get("Item Pickup") == "false" or $this->cfg->get("Item Pickup") == "disable") {
             if (!$ipie->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Item Pickup") == null) {
                     $ipie->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Item Pickup"));
@@ -246,7 +246,7 @@ class ServerManager extends PluginBase implements Listener
     public function onCraftItem (CraftItemEvent $cie)
 	{
 		$prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] ";
-        if ($this->cfg->get("Item Crafting") == false or $this->cfg->get("Item Crafting") == disable) {
+        if ($this->cfg->get("Item Crafting") == "false" or $this->cfg->get("Item Crafting") == "disable") {
             if (!$cie->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Item Crafting") == null) {
                     $cie->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Item Crafting"));
