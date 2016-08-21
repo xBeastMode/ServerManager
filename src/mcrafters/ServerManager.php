@@ -139,7 +139,7 @@ class ServerManager extends PluginBase implements Listener
 	{
 		$prefix = SM::GRAY . "[" . SM::BOLD . SM::AQUA . "Server" . SM::GRAY . "-" . SM::YELLOW . "Manager" . SM::GRAY . "] ";
         if ($this->cfg->get("Commands") == false or $this->cfg->get("Commands") == disable) {
-            if (!$cpe->getPlayer()->hasPermission('servermanager.bypass')) {
+            if (!$pcpe->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Commands") == null) {
                     $pcpe->getPlayer()->sendMessage($prefix2 . " : " . $this->cfgm->get("Commands"));
                 }
