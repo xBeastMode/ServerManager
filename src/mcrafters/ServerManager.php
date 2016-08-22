@@ -63,7 +63,6 @@ class ServerManager extends PluginBase implements Listener
 
     public function onPlace(BlockPlaceEvent $bpe)
     {
-`
 		$Prefix2 = str_replace("$", "§", $this->cfgm->get("Prefix"));
         if($this->cfg->get("BlockPlacing") == "false" or $this->cfg->get("BlockPlacing") == "disable"){
             if(!$bpe->getPlayer()->hasPermission('servermanager.bypass')){
