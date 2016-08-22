@@ -9,8 +9,8 @@
 | Website | http://mcrafterss.github.io/ServerManager |
 |---------|-------------------------------------------|
 
-Server-Manager is used to turn on and off many things in your server.
-Note :You can Customize Everything in Config.yml and Messages.yml
+Server-Manager is used to turn on and off many things in your server.</br>
+Note :You can Customize Everything in Config.yml and Messages.yml</br>
 Here is a list of things you can manage.
 
 | Things You Can Manage |
