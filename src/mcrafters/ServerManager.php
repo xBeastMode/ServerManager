@@ -248,7 +248,7 @@ class ServerManager extends PluginBase implements Listener
 		$Prefix2 = str_replace("$", "§", $this->cfgm->get("Prefix"));
         if ($this->cfg->get("Item Crafting") == "false" or $this->cfg->get("Item Crafting") == "disable") {
             if (!$cie->getPlayer()->hasPermission('servermanager.bypass')) {
-                if(!$this->cfgm->get("Iteam Crafting") == null) {
+                if(!$this->cfgm->get("Item Crafting") == null) {
                     $cie->getPlayer()->sendMessage($Prefix2 . " : " . str_replace("$", "§", $this->cfgm->get("Item Crafting")));
                 }
                 $cie->setCancelled();
