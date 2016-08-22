@@ -102,11 +102,11 @@ class ServerManager extends PluginBase implements Listener
     {
 		$Prefix2 = str_replace("$", "§", $this->cfgm->get("Prefix"));
         if($this->cfg->get("ItemDrop") == "false" or $this->cfg->get("ItemDrop") == "disable"){
-            if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')){
+            if(!$pdie->getPlayer()->hasPermission('servermanager.bypass')){
                 if(!$this->cfgm->get("ItemDrop") == null) {
-                    $bbe->getPlayer()->sendMessage($Prefix2 . " : " . str_replace("$", "§", $this->cfgm->get("ItemDrop")));
+                    $pdie->getPlayer()->sendMessage($Prefix2 . " : " . str_replace("$", "§", $this->cfgm->get("ItemDrop")));
                 }
-                    $bbe->setCancelled();
+                    $pdie->setCancelled();
             }
         }
     }
@@ -114,11 +114,11 @@ class ServerManager extends PluginBase implements Listener
     {
 		$Prefix2 = str_replace("$", "§", $this->cfgm->get("Prefix"));
         if($this->cfg->get("Death") == "false" or $this->cfg->get("Death") == "disable"){
-            if(!$bbe->getPlayer()->hasPermission('servermanager.bypass')) {
+            if(!$pde->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Death") == null) {
-                $bbe->getPlayer()->sendMessage($Prefix2 . " : " . str_replace("$", "§", $this->cfgm->get("Death")));
+                $pde->getPlayer()->sendMessage($Prefix2 . " : " . str_replace("$", "§", $this->cfgm->get("Death")));
             }
-                $bbe->setCancelled();
+                $pde->setCancelled();
             }
         }
     }
@@ -187,11 +187,11 @@ class ServerManager extends PluginBase implements Listener
 	{
 		$Prefix2 = str_replace("$", "§", $this->cfgm->get("Prefix"));
         if ($this->cfg->get("Sneaking") == "false" or $this->cfg->get("Sneaking") == "disable") {
-            if (!$pre->getPlayer()->hasPermission('servermanager.bypass')) {
+            if (!$ptse->getPlayer()->hasPermission('servermanager.bypass')) {
                 if(!$this->cfgm->get("Sneaking") == null) {
-                    $pre->getPlayer()->sendMessage($Prefix2 . " : " . str_replace("$", "§", $this->cfgm->get("Sneaking")));
+                    $ptse->getPlayer()->sendMessage($Prefix2 . " : " . str_replace("$", "§", $this->cfgm->get("Sneaking")));
                 }
-                    $pre->setCancelled();
+                    $ptse->setCancelled();
             }
         }
     }
@@ -248,7 +248,7 @@ class ServerManager extends PluginBase implements Listener
 		$Prefix2 = str_replace("$", "§", $this->cfgm->get("Prefix"));
         if ($this->cfg->get("Item Crafting") == "false" or $this->cfg->get("Item Crafting") == "disable") {
             if (!$cie->getPlayer()->hasPermission('servermanager.bypass')) {
-                if(!$this->cfgm->get("Item Crafting") == null) {
+                if(!$this->cfgm->get("Iteam Crafting") == null) {
                     $cie->getPlayer()->sendMessage($Prefix2 . " : " . str_replace("$", "§", $this->cfgm->get("Item Crafting")));
                 }
                 $cie->setCancelled();
