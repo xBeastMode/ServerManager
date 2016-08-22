@@ -9,6 +9,9 @@
 #         The Ultimate Server Managing Plugin                    |___/              #
 #####################################################################################
 #
+# If you want to disable the prefix just clear the text between the ""
+# If you want to edit the prefix simply edit the text between the ""
+#
 Prefix: "[$6Server$4Manager]"
 #
 # To enable a message right text in it
