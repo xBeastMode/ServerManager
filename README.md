@@ -17,7 +17,6 @@ Here is a list of things you can manage.
 |-----------------------|
 | Block Placing |
 | Block Breaking |
-| Chatting |
 | Item Drop |
 | Death |
 | GameModeChange |
